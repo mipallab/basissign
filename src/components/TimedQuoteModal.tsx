@@ -32,8 +32,6 @@ function deriveDefaultSignTypeFromPath(pathname: string | null): string {
   if (lower.includes("halo-lit")) return "halo-lit";
   if (lower.includes("dual-lit")) return "dual-lit";
   if (lower.includes("blade") || lower.includes("push-thru")) return "blade-sign";
-  if (lower.includes("neon")) return "led-neon";
-  if (lower.includes("metal") || lower.includes("ada")) return "metal-ada";
   return "front-lit";
 }
 

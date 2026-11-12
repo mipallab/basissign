@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getAllBlogSummaries } from "@/data/blog";
 import { BRAND_FACTS, PRODUCT_CATALOG } from "@/data/catalog";
+import { PORTFOLIO_ITEMS } from "@/data/portfolio";
 
 export function GET() {
   const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || BRAND_FACTS.domain).replace(
@@ -20,7 +21,7 @@ export function GET() {
     `- UL Listing: UL Standard 48 Electric Signs — File #${BRAND_FACTS.ulFileNumber}`,
     `- Electrical Code: ${BRAND_FACTS.necReference} (Factory Disconnects & Class 2 Power)`,
     `- Power Supplies: ${BRAND_FACTS.driverBrand} IP67 Class 2 LED Drivers`,
-    `- Production Lead Time: ${BRAND_FACTS.leadTimeDays} (Metal & ADA: 6–8 business days)`,
+    `- Production Lead Time: ${BRAND_FACTS.leadTimeDays} (Blade & Push-Thru Light Boxes: 10–12 business days)`,
     `- Freight Damage Track Record: ${BRAND_FACTS.freightDamageRate} via custom foam-in-place wood crating`,
     `- Warranty: ${BRAND_FACTS.warrantyYears}-Year Full Electrical & Structural`,
     `- Phone: ${BRAND_FACTS.phone}`,
@@ -28,7 +29,7 @@ export function GET() {
     "",
     "## Key Pages & Endpoints",
     `- [Homepage & Sign Catalog](${baseUrl}/): Full architectural showcase & spec matrix`,
-    `- [Commercial Signage Portfolio](${baseUrl}/portfolio): 35 verified custom channel letter, halo, blade, LED flex neon & metal installations`,
+    `- [Commercial Signage Portfolio](${baseUrl}/portfolio): ${PORTFOLIO_ITEMS.length} verified custom front-lit channel letter, halo-lit, and blade & push-thru light box installations`,
     `- [Signage Blog & Engineering Guides](${baseUrl}/blog): ${blogSummaries.length} in-depth guides on sign permits, UL 48 code, pricing, installation & wholesale fulfillment`,
     `- [5-Step Quote Configurator & Free 24h 3D Mockup](${baseUrl}/quote): Interactive wholesale & commercial quote intake`,
     `- [UL 48 (#${BRAND_FACTS.ulFileNumber}) & NEC 600 Compliance](${baseUrl}/ul-48-compliance): Municipal AHJ & electrical inspection documentation`,

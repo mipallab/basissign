@@ -8,7 +8,7 @@ import { BRAND_FACTS } from "@/data/catalog";
 export const metadata: Metadata = {
   title: "Request a Custom Sign Quote & Free 3D Mockup",
   description:
-    "Configure custom UL 48 (#E555259) channel letters, halo-lit signs, push-thru light boxes, blade signs, or ADA signage. Receive factory-direct pricing and a free 3D Day/Night mockup within 24 hours.",
+    "Configure custom UL 48 (#E555259) front-lit channel letters, halo-lit signs, dual-lit letters, push-thru light boxes, and double-sided blade signs. Receive factory-direct pricing and a free 3D Day/Night mockup within 24 hours.",
   alternates: {
     canonical: `${BRAND_FACTS.domain}/quote`,
   },
@@ -102,8 +102,8 @@ export default async function QuotePage({ searchParams }: QuotePageProps) {
             </h1>
             <p className="mt-3 text-[length:var(--text-3xl)] leading-relaxed text-[var(--text-secondary)]">
               Configure your UL 48 (#{BRAND_FACTS.ulFileNumber}) channel letters,
-              blade cabinet, or ADA signage in under 90 seconds. Sign shops can
-              enable Blind White-Label Shipping in Step 2.
+              dual-lit signs, or blade &amp; push-thru light boxes in under 90
+              seconds. Sign shops can enable Blind White-Label Shipping in Step 2.
             </p>
 
             {/* Quick SLA Badges */}

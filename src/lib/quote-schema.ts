@@ -8,9 +8,7 @@ export const SIGN_TYPE_OPTIONS: ReadonlyArray<{
     | "dual-lit"
     | "full-lit"
     | "push-thru"
-    | "blade-sign"
-    | "led-neon"
-    | "metal-ada";
+    | "blade-sign";
   label: string;
   shortLabel: string;
   badge: string;
@@ -72,24 +70,6 @@ export const SIGN_TYPE_OPTIONS: ReadonlyArray<{
     catalogSlug: "blade-signs-light-boxes",
     iconKey: "blade-lightbox",
   },
-  {
-    id: "led-neon",
-    label: "Commercial LED Flex Neon",
-    shortLabel: "LED Flex Neon",
-    badge: "6–8 Days · UL Class 2",
-    description: "Unbreakable optical silicone neon mounted on CNC acrylic backer.",
-    catalogSlug: "commercial-led-neon",
-    iconKey: "led-neon",
-  },
-  {
-    id: "metal-ada",
-    label: "Solid Metal / ADA Signs",
-    shortLabel: "Metal & ADA",
-    badge: "6–8 Days · Code Ready",
-    description: "Laser-cut stainless, brass, aluminum & Grade-2 Braille ADA.",
-    catalogSlug: "metal-ada-signs",
-    iconKey: "metal-ada",
-  },
 ];
 
 export const SIGN_TYPE_IDS = [
@@ -99,8 +79,6 @@ export const SIGN_TYPE_IDS = [
   "full-lit",
   "push-thru",
   "blade-sign",
-  "led-neon",
-  "metal-ada",
 ] as const;
 
 export type ProductQuoteTypeId = (typeof SIGN_TYPE_IDS)[number];
@@ -142,7 +120,7 @@ export const MOUNTING_OPTIONS = [
 ] as const;
 
 export const LETTER_HEIGHT_OPTIONS = [
-  "Under 10\" (Metal / Halo / ADA)",
+  "Under 10\" (Halo / Interior Letters)",
   "10\" – 14\" (Retail Standard)",
   "15\" – 20\" (Plaza Primary)",
   "21\" – 30\" (Highway / Anchor)",
@@ -156,7 +134,6 @@ export const LED_KELVIN_OPTIONS = [
   "4000K Architectural Warm White",
   "3000K Warm Gold Halo",
   "Custom Pantone (PMS) Face Color",
-  "Non-Illuminated Metal / ADA Finish",
 ] as const;
 
 export const TARGET_TIMELINE_OPTIONS = [
@@ -293,12 +270,6 @@ export function normalizeQuoteTypeParam(raw?: string | null): (typeof SIGN_TYPE_
     "blade-sign": "blade-sign",
     "blade-lightbox": "blade-sign",
     "blade-signs-light-boxes": "blade-sign",
-    "led-neon": "led-neon",
-    "commercial-led-neon": "led-neon",
-    "neon": "led-neon",
-    "led-flex-neon": "led-neon",
-    "metal-ada": "metal-ada",
-    "metal-ada-signs": "metal-ada",
   };
   return aliasMap[value] ?? "front-lit";
 }

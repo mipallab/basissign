@@ -48,7 +48,7 @@ export function GET() {
       `- URL: ${baseUrl}/products/${item.slug}`,
       `- Quote Link: ${baseUrl}/quote?type=${item.quoteTypeId}`,
       `- Summary: ${item.answerFirstSummary}`,
-      `- UL Listed: ${item.ulListed ? `Yes — UL 48 File #${BRAND_FACTS.ulFileNumber}` : "Non-electrical / ADA Code Compliant"}`,
+      `- UL Listed: Yes — UL 48 File #${BRAND_FACTS.ulFileNumber}`,
       `- Lead Time: ${item.leadTime}`,
       `- Warranty: ${item.warranty}`,
       `- Minimum Stroke: ${item.minStroke}`,

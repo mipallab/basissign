@@ -8,16 +8,16 @@ import { BRAND_FACTS } from "@/data/catalog";
 import { PORTFOLIO_ITEMS } from "@/data/portfolio";
 
 export const metadata: Metadata = {
-  title: "Commercial Signage Portfolio | 35 Completed US Installations",
+  title: `Commercial Signage Portfolio | ${PORTFOLIO_ITEMS.length} Completed US Installations`,
   description:
-    "Browse 35 completed BASISSIGN UL 48 channel letter, halo-lit, double-sided blade, silicone LED flex neon, and dimensional metal installations across US restaurants, clinics, plazas, and hotels.",
+    `Browse ${PORTFOLIO_ITEMS.length} completed BASISSIGN UL 48 front-lit channel letter, reverse halo-lit, and double-sided blade & push-thru light box installations across US restaurants, clinics, plazas, and hotels.`,
   alternates: {
     canonical: "/portfolio",
   },
   openGraph: {
     title: "Commercial Signage Portfolio | BASISSIGN",
     description:
-      "35 architectural sign installations manufactured factory-direct by Basis Sign LLC (UL 48 #E555259). Filter by illumination style and inspect fabrication quality.",
+      `${PORTFOLIO_ITEMS.length} architectural sign installations manufactured factory-direct by Basis Sign LLC (UL 48 #E555259). Filter by illumination style and inspect fabrication quality.`,
     url: `${BRAND_FACTS.domain}/portfolio`,
     images: [
       {
@@ -36,7 +36,7 @@ export default function PortfolioPage() {
     "@type": ["CollectionPage", "ImageGallery"],
     name: "BASISSIGN Commercial Signage Installation Portfolio",
     description:
-      "35 verified custom channel letter, halo-lit, blade cabinet, silicone LED flex neon, and architectural dimensional metal projects fabricated by Basis Sign LLC.",
+      `${PORTFOLIO_ITEMS.length} verified custom front-lit channel letter, reverse halo-lit, and blade & push-thru light box projects fabricated by Basis Sign LLC.`,
     url: `${BRAND_FACTS.domain}/portfolio`,
     about: {
       "@type": "Organization",
@@ -104,7 +104,7 @@ export default function PortfolioPage() {
               <div className="flex flex-wrap items-center gap-2.5">
                 <span className="inline-flex items-center gap-2 rounded-[var(--radius-lg)] border border-[var(--border-strong)] bg-[var(--bg-elevated)] px-3.5 py-1 text-[length:var(--text-md)] font-semibold uppercase tracking-[0.06em] text-[var(--accent-text)]">
                   <PortfolioGridIcon className="h-3.5 w-3.5" />
-                  <span>01–35 / Architectural Installations</span>
+                  <span>01–{PORTFOLIO_ITEMS.length} / Architectural Installations</span>
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-[var(--radius-lg)] border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-3 py-1 text-[length:var(--text-md)] font-medium text-[var(--text-secondary)]">
                   <ShieldCheckIcon className="h-3.5 w-3.5 text-[var(--accent-text)]" />
@@ -117,11 +117,10 @@ export default function PortfolioPage() {
               </h1>
 
               <p className="mt-3 text-[length:var(--text-2xl)] leading-relaxed text-[var(--text-secondary)]">
-                Inspect finished BASISSIGN channel letters, reverse halo
-                monograms, projecting blade cabinets, optical silicone LED flex
-                neon, and dimensional metal lobby installations delivered for
-                franchises, restaurants, medical centers, and US trade sign
-                partners.
+                Inspect finished BASISSIGN front-lit channel letters, reverse
+                halo-lit architectural signage, and projecting blade &amp;
+                push-thru light boxes delivered for franchises, restaurants,
+                medical centers, and US trade sign partners.
               </p>
             </div>
 

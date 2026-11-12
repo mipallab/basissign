@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BLOG_POST_COUNT } from "@/data/blog-shared";
 import { BRAND_FACTS, PRODUCT_CATALOG } from "@/data/catalog";
+import { PORTFOLIO_ITEMS } from "@/data/portfolio";
 import {
   MailIcon,
   PhoneIcon,
@@ -118,7 +119,7 @@ export function Footer() {
                   href="/portfolio"
                   className="inline-flex min-h-[32px] items-center text-[length:var(--text-xl)] text-[var(--local-fg-muted)] no-underline transition-colors hover:text-[var(--local-fg)]"
                 >
-                  Our Portfolio (35 Projects)
+                  Our Portfolio ({PORTFOLIO_ITEMS.length} Projects)
                 </Link>
               </li>
               <li>

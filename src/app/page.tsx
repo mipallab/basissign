@@ -3,6 +3,7 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 import { HeroSection } from "@/components/HeroSection";
 import { ProcessSection } from "@/components/ProcessSection";
 import { ProductChapters } from "@/components/ProductChapters";
+import { ProductQuoteProvider } from "@/components/ProductQuoteModal";
 import { SpecComparisonTable } from "@/components/SpecComparisonTable";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { BRAND_FACTS, PRODUCT_CATALOG } from "@/data/catalog";
@@ -22,7 +23,7 @@ export default function HomePage() {
     email: BRAND_FACTS.email,
     image: `${siteUrl}/images/hero/hero-01-on.webp`,
     description:
-      "US factory-direct manufacturer of UL 48 listed (#E555259) custom channel letters, halo-lit signage, push-thru light boxes, double-sided blade signs, and ADA metal plaques.",
+      "US factory-direct manufacturer of UL 48 listed (#E555259) custom front-lit, halo-lit, and dual-lit channel letters plus push-thru light boxes and double-sided blade signs.",
     areaServed: {
       "@type": "Country",
       name: "United States",
@@ -32,7 +33,7 @@ export default function HomePage() {
       "NEC Article 600 Signage Wiring",
       "Custom LED Channel Letters",
       "Wholesale Blind Trade Sign Fabrication",
-      "ADA Grade-2 Tactile Braille Signage",
+      "Push-Thru Light Boxes & Double-Sided Blade Signs",
     ],
   };
 
@@ -112,8 +113,10 @@ export default function HomePage() {
       <JsonLd data={faqLd} />
 
       <HeroSection />
-      <ProductChapters />
-      <SpecComparisonTable />
+      <ProductQuoteProvider defaultPlacement="home-product-modal">
+        <ProductChapters />
+        <SpecComparisonTable />
+      </ProductQuoteProvider>
       <ProcessSection />
       <TestimonialsSection />
       <FaqAccordion id="faq" items={GLOBAL_FAQS} />

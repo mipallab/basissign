@@ -11,7 +11,7 @@ import { BRAND_FACTS } from "@/data/catalog";
 export const metadata: Metadata = {
   title: "Commercial Signage Blog & UL 48 Engineering Guides",
   description:
-    `Explore ${BLOG_POST_COUNT} in-depth guides from BASISSIGN covering municipal sign permits, UL 48 (#E555259) compliance, channel letter pricing, LED flex neon specs, mounting hardware, and wholesale trade outsourcing.`,
+    `Explore ${BLOG_POST_COUNT} in-depth guides from BASISSIGN covering municipal sign permits, UL 48 (#E555259) compliance, channel letter pricing, blade & push-thru light boxes, mounting hardware, and wholesale trade outsourcing.`,
   alternates: {
     canonical: "/blog",
   },

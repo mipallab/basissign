@@ -278,6 +278,7 @@ body {
   justify-content: center;
   gap: 12px;
   min-height: 48px;
+  max-width: 100%;
   padding: 6px 8px 6px 22px;
   border-radius: var(--radius-lg);
   background-color: var(--btn-bg);
@@ -623,7 +624,7 @@ body {
     background-color: var(--bg-elevated);
     color: var(--text-primary);
     font-family: inherit;
-    font-size: var(--text-2xl);
+    font-size: var(--text-3xl);
     line-height: 1.4;
     transition:
       border-color var(--dur-fast) var(--ease-editorial),
@@ -809,7 +810,7 @@ body {
    Luminous Accent Glow Helper
    ========================================================================== */
 
-.neon-glow-ring {
+.accent-glow-ring {
   box-shadow:
     0 0 0 1px color-mix(in srgb, var(--accent-glow) 35%, transparent),
     0 12px 40px -12px color-mix(in srgb, var(--accent-cta) 38%, transparent);

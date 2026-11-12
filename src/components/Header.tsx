@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type FocusEvent, type KeyboardEvent } from "react";
 import { BLOG_POST_COUNT } from "@/data/blog-shared";
 import { BRAND_FACTS, PRODUCT_CATALOG } from "@/data/catalog";
+import { PORTFOLIO_ITEMS } from "@/data/portfolio";
 import {
   ArrowRightIcon,
   BookOpenIcon,
@@ -495,7 +496,7 @@ export function Header() {
                   >
                     <span className="inline-flex items-center gap-2">
                       <PortfolioGridIcon className="h-4 w-4 text-[var(--accent-text)]" />
-                      Our Portfolio (35 Installations)
+                      Our Portfolio ({PORTFOLIO_ITEMS.length} Installations)
                     </span>
                     <ArrowRightIcon className="h-4 w-4" />
                   </Link>

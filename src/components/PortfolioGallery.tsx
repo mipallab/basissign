@@ -67,8 +67,6 @@ export function PortfolioGallery() {
       "front-lit": 0,
       "halo-lit": 0,
       "blade-cabinet": 0,
-      "led-neon": 0,
-      "metal-ada": 0,
     };
     for (const item of PORTFOLIO_ITEMS) {
       counts[item.categoryId] += 1;
@@ -471,7 +469,7 @@ export function PortfolioGallery() {
           >
             {/* Top Toolbar: Category, Counter, Zoom Controls & Close */}
             <div
-              className="flex flex-wrap items-center justify-between gap-3 border-b px-4 py-3 sm:px-6"
+              className="flex flex-wrap items-center justify-between gap-2.5 border-b px-3 py-3 sm:px-6"
               style={{
                 borderColor: "var(--local-border)",
                 backgroundColor: "var(--local-elevated)",
@@ -496,14 +494,14 @@ export function PortfolioGallery() {
                   onClick={() => adjustZoom(zoom - ZOOM_STEP)}
                   disabled={zoom <= MIN_ZOOM}
                   aria-label="Zoom out image"
-                  className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-[var(--radius-lg)] border border-[var(--local-border)] bg-[var(--local-bg)] text-[var(--local-fg)] transition-colors hover:border-[var(--accent-glow)] active:scale-[0.96] disabled:cursor-not-allowed disabled:opacity-40"
+                  className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-[var(--radius-lg)] border border-[var(--local-border)] bg-[var(--local-bg)] text-[var(--local-fg)] transition-colors hover:border-[var(--accent-glow)] active:scale-[0.96] disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   <ZoomOutIcon className="h-4 w-4" />
                 </button>
 
                 <span
                   aria-live="polite"
-                  className="min-w-[54px] text-center text-[length:var(--text-lg)] font-semibold text-[var(--local-fg)]"
+                  className="min-w-[52px] text-center text-[length:var(--text-lg)] font-semibold text-[var(--local-fg)]"
                 >
                   {Math.round(zoom * 100)}%
                 </span>
@@ -513,7 +511,7 @@ export function PortfolioGallery() {
                   onClick={() => adjustZoom(zoom + ZOOM_STEP)}
                   disabled={zoom >= MAX_ZOOM}
                   aria-label="Zoom in image"
-                  className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-[var(--radius-lg)] border border-[var(--local-border)] bg-[var(--local-bg)] text-[var(--local-fg)] transition-colors hover:border-[var(--accent-glow)] active:scale-[0.96] disabled:cursor-not-allowed disabled:opacity-40"
+                  className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-[var(--radius-lg)] border border-[var(--local-border)] bg-[var(--local-bg)] text-[var(--local-fg)] transition-colors hover:border-[var(--accent-glow)] active:scale-[0.96] disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   <ZoomInIcon className="h-4 w-4" />
                 </button>
@@ -523,7 +521,7 @@ export function PortfolioGallery() {
                   onClick={resetZoomAndPan}
                   disabled={zoom <= 1.01 && pan.x === 0 && pan.y === 0}
                   aria-label="Reset zoom to 100%"
-                  className="inline-flex h-10 cursor-pointer items-center gap-1.5 rounded-[var(--radius-lg)] border border-[var(--local-border)] bg-[var(--local-bg)] px-3 text-[length:var(--text-md)] font-medium text-[var(--local-fg)] transition-colors hover:border-[var(--accent-glow)] active:scale-[0.96] disabled:cursor-not-allowed disabled:opacity-40"
+                  className="inline-flex h-11 min-w-[44px] cursor-pointer items-center justify-center gap-1.5 rounded-[var(--radius-lg)] border border-[var(--local-border)] bg-[var(--local-bg)] px-3 text-[length:var(--text-md)] font-medium text-[var(--local-fg)] transition-colors hover:border-[var(--accent-glow)] active:scale-[0.96] disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   <ResetZoomIcon className="h-4 w-4" />
                   <span className="hidden sm:inline">Reset</span>
@@ -540,7 +538,7 @@ export function PortfolioGallery() {
                   type="button"
                   onClick={closeModal}
                   aria-label="Close installation lightbox"
-                  className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-[var(--radius-lg)] border border-[var(--local-border)] bg-[var(--local-bg)] text-[var(--local-fg)] transition-colors hover:border-[var(--accent-glow)] hover:text-[var(--accent-text)] active:scale-[0.96]"
+                  className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-[var(--radius-lg)] border border-[var(--local-border)] bg-[var(--local-bg)] text-[var(--local-fg)] transition-colors hover:border-[var(--accent-glow)] hover:text-[var(--accent-text)] active:scale-[0.96]"
                 >
                   <CloseIcon className="h-5 w-5" />
                 </button>
@@ -626,12 +624,10 @@ export function PortfolioGallery() {
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2 text-[length:var(--text-md)] text-[var(--local-fg-muted)]">
                   <span>{activeItem.industry}</span>
-                  {activeItem.categoryId !== "metal-ada" && (
-                    <span className="inline-flex items-center gap-1 text-[var(--accent-text)]">
-                      · <ShieldCheckIcon className="h-3.5 w-3.5" /> UL 48 #
-                      {BRAND_FACTS.ulFileNumber}
-                    </span>
-                  )}
+                  <span className="inline-flex items-center gap-1 text-[var(--accent-text)]">
+                    · <ShieldCheckIcon className="h-3.5 w-3.5" /> UL 48 #
+                    {BRAND_FACTS.ulFileNumber}
+                  </span>
                 </div>
                 <h2
                   id="lightbox-project-title"

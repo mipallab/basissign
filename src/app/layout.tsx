@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | BASISSIGN",
   },
   description:
-    "Factory-direct US custom channel letters, halo-lit signage, push-thru light boxes, double-sided blade signs, and ADA metal plaques. UL 48 Listed (#E555259) & NEC Article 600 compliant. Free 24h 3D Day/Night mockups and 8–10 business day production.",
+    "Factory-direct US custom front-lit, halo-lit, and dual-lit channel letters plus push-thru light boxes and double-sided blade signs. UL 48 Listed (#E555259) & NEC Article 600 compliant. Free 24h 3D Day/Night mockups and 8–10 business day production.",
   keywords: [
     "UL 48 channel letters",
     "wholesale sign manufacturing",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "dual-lit channel letters",
     "push-thru light box",
     "double-sided blade sign",
-    "ADA tactile braille signage",
+    "illuminated architectural signage",
     "UL E555259",
     "NEC Article 600 sign disconnect",
     "BASISSIGN",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     siteName: BRAND_FACTS.name,
     title: "BASISSIGN | UL 48 Custom Channel Letters & Architectural Signage",
     description:
-      "UL 48 (#E555259) custom illuminated channel letters, halo signage, blade cabinets, and ADA metal plaques. 8–10 business day production with free 24h 3D Day/Night mockups.",
+      "UL 48 (#E555259) custom illuminated front-lit, halo-lit, and dual-lit channel letters plus blade & push-thru light boxes. 8–10 business day production with free 24h 3D Day/Night mockups.",
     images: [
       {
         url: "/images/hero/hero-01-on.webp",
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BASISSIGN | UL 48 Custom Channel Letters & Commercial Signage",
     description:
-      "Factory-direct UL 48 (#E555259) custom channel letters, blade signs, and ADA metal signage. Free 24h 3D Day/Night mockups & <1% freight damage.",
+      "Factory-direct UL 48 (#E555259) custom channel letters, dual-lit signage, and blade & push-thru light boxes. Free 24h 3D Day/Night mockups & <1% freight damage.",
     images: ["/images/hero/hero-01-on.webp"],
   },
   robots: {

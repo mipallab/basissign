@@ -290,9 +290,9 @@ export function ProductGallerySlider({
                     </>
                   ) : (
                     <>
-                      <span className="sm:hidden">Metal · ADA</span>
+                      <span className="sm:hidden">Studio View</span>
                       <span className="hidden sm:inline">
-                        {shortName} · Precision Metal &amp; ADA
+                        {shortName} · Architectural Showcase
                       </span>
                     </>
                   )}

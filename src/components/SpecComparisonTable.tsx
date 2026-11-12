@@ -1,12 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import { PRODUCT_CATALOG, SPEC_COMPARISON_ROWS } from "@/data/catalog";
 import { ArrowRightIcon, ProductServiceIcon } from "./Icons";
+import { useProductQuoteModal } from "./ProductQuoteModal";
 
-function getQuoteTypeForSlug(slug: string): string {
-  return PRODUCT_CATALOG.find((item) => item.slug === slug)?.quoteTypeId ?? "front-lit";
+function getProductForSlug(slug: string) {
+  return PRODUCT_CATALOG.find((item) => item.slug === slug);
 }
 
 export function SpecComparisonTable() {
+  const { openQuoteModal } = useProductQuoteModal();
+
   return (
     <section
       id="specs-comparison"
@@ -87,7 +92,10 @@ export function SpecComparisonTable() {
             </thead>
             <tbody>
               {SPEC_COMPARISON_ROWS.map((row) => {
-                const quoteType = getQuoteTypeForSlug(row.slug);
+                const matched = getProductForSlug(row.slug);
+                const quoteType = matched?.quoteTypeId ?? "front-lit";
+                const productName = matched?.shortName ?? row.product;
+
                 return (
                   <tr
                     key={row.slug}
@@ -96,7 +104,7 @@ export function SpecComparisonTable() {
                     <th scope="row" className="px-5 py-4 font-semibold">
                       <Link
                         href={`/products/${row.slug}`}
-                        className="group inline-flex items-center gap-2.5 text-[length:var(--text-2xl)] text-[var(--text-primary)] no-underline transition-colors hover:text-[var(--accent-text)]"
+                        className="group inline-flex min-h-[44px] items-center gap-2.5 text-[length:var(--text-2xl)] text-[var(--text-primary)] no-underline transition-colors hover:text-[var(--accent-text)]"
                       >
                         <span
                           className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] border border-[var(--border-subtle)] bg-[var(--bg-page)] text-[var(--accent-text)] transition-colors group-hover:border-[var(--accent-cta)]"
@@ -125,13 +133,24 @@ export function SpecComparisonTable() {
                       {row.bestUseCase}
                     </td>
                     <td className="px-5 py-4 text-right">
-                      <Link
-                        href={`/quote?type=${quoteType}`}
-                        className="inline-flex min-h-[40px] items-center gap-1.5 rounded-[var(--radius-lg)] border border-[var(--border-strong)] bg-[var(--bg-page)] px-4 py-1.5 text-[length:var(--text-lg)] font-medium text-[var(--text-primary)] no-underline transition-colors duration-[var(--dur-fast)] hover:border-[var(--accent-cta)] hover:bg-[var(--accent-cta)] hover:text-[var(--surface-white)] active:scale-[0.98]"
+                      <button
+                        type="button"
+                        aria-label={`Request a Quote for ${productName}`}
+                        onClick={(e) =>
+                          openQuoteModal(
+                            {
+                              quoteTypeId: quoteType,
+                              productName,
+                              placement: `spec-matrix:${row.slug}`,
+                            },
+                            e.currentTarget
+                          )
+                        }
+                        className="inline-flex min-h-[44px] cursor-pointer items-center gap-1.5 rounded-[var(--radius-lg)] border border-[var(--border-strong)] bg-[var(--bg-page)] px-4 py-1.5 text-[length:var(--text-lg)] font-medium text-[var(--text-primary)] transition-colors duration-[var(--dur-fast)] hover:border-[var(--accent-cta)] hover:bg-[var(--accent-cta)] hover:text-[var(--surface-white)] active:scale-[0.98]"
                       >
                         <span>Quote</span>
                         <ArrowRightIcon className="h-3.5 w-3.5" />
-                      </Link>
+                      </button>
                     </td>
                   </tr>
                 );

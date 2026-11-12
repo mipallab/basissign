@@ -416,37 +416,6 @@ export function BladeLightboxIcon({ className = "h-5 w-5", ...props }: IconProps
   );
 }
 
-export function NeonFlexIcon({ className = "h-5 w-5", ...props }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className} {...props}>
-      <path
-        d="M4.5 15.5C4.5 10.5 7.5 6.5 10.5 6.5C13.5 6.5 11.2 17.5 14.5 17.5C17.8 17.5 19.5 12 19.5 8.5"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="4.5" cy="17.5" r="1.4" stroke="currentColor" strokeWidth="1.5" />
-      <circle cx="19.5" cy="6.5" r="1.4" stroke="currentColor" strokeWidth="1.5" />
-    </svg>
-  );
-}
-
-export function MetalAdaIcon({ className = "h-5 w-5", ...props }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className} {...props}>
-      <rect x="4" y="4" width="16" height="16" rx="3.5" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M7.5 8.5H16.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-      <circle cx="8.5" cy="12.5" r="1" fill="currentColor" />
-      <circle cx="12" cy="12.5" r="1" fill="currentColor" />
-      <circle cx="15.5" cy="12.5" r="1" fill="currentColor" />
-      <circle cx="8.5" cy="15.8" r="1" fill="currentColor" />
-      <circle cx="12" cy="15.8" r="1" fill="currentColor" />
-      <circle cx="15.5" cy="15.8" r="1" fill="currentColor" />
-    </svg>
-  );
-}
-
 export function ProductServiceIcon({
   iconKey,
   className = "h-4 w-4",
@@ -461,10 +430,6 @@ export function ProductServiceIcon({
       return <DualLitIcon className={className} {...props} />;
     case "blade-lightbox":
       return <BladeLightboxIcon className={className} {...props} />;
-    case "led-neon":
-      return <NeonFlexIcon className={className} {...props} />;
-    case "metal-ada":
-      return <MetalAdaIcon className={className} {...props} />;
   }
 }
 

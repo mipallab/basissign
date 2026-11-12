@@ -55,19 +55,17 @@ const STEP_LABELS = [
 function getDefaultMounting(
   signType: QuotePayload["signType"]
 ): QuotePayload["mounting"] {
-  if (signType === "halo-lit" || signType === "dual-lit" || signType === "led-neon") {
+  if (signType === "halo-lit" || signType === "dual-lit") {
     return "standoffs";
   }
   if (signType === "blade-sign" || signType === "push-thru") return "blade-bracket";
-  if (signType === "metal-ada") return "flush";
   return "raceway";
 }
 
 function getDefaultLedFinish(
   signType: QuotePayload["signType"]
 ): QuotePayload["ledFinish"] {
-  if (signType === "metal-ada") return "Non-Illuminated Metal / ADA Finish";
-  if (signType === "halo-lit" || signType === "led-neon") return "3000K Warm Gold Halo";
+  if (signType === "halo-lit") return "3000K Warm Gold Halo";
   return "6500K Crisp Cool White";
 }
 
@@ -727,7 +725,7 @@ export function QuoteWizard({
                         errors.signType
                           ? "border-[var(--status-error-border)] bg-[var(--status-error-bg)]"
                           : selected
-                            ? "border-[var(--accent-cta)] bg-[var(--bg-subtle)] neon-glow-ring"
+                            ? "border-[var(--accent-cta)] bg-[var(--bg-subtle)] accent-glow-ring"
                             : "border-[var(--border-subtle)] bg-[var(--bg-page)] hover:border-[var(--accent-cta)] hover:bg-[var(--bg-card-hover)]"
                       }`}
                     >

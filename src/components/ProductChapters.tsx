@@ -7,8 +7,8 @@ import {
   ProductServiceIcon,
   ShieldCheckIcon,
 } from "./Icons";
-import { PillButton } from "./PillButton";
 import { ProductGallerySlider } from "./ProductGallerySlider";
+import { ProductQuoteTrigger } from "./ProductQuoteModal";
 
 export function ProductChapters() {
   return (
@@ -22,7 +22,7 @@ export function ProductChapters() {
         <div className="flex flex-col justify-between gap-6 border-b border-[var(--border-subtle)] pb-10 lg:flex-row lg:items-end">
           <div className="max-w-3xl">
             <p className="ui-eyebrow text-[var(--accent-text)]">
-              01–06 / Architectural Sign Systems
+              01–04 / Architectural Sign Systems
             </p>
             <h2
               id="products-heading"
@@ -51,7 +51,7 @@ export function ProductChapters() {
               >
                 {/* 3-Photo + 1-Video Neontrip-Matched Gallery Slider Column */}
                 <div
-                  className={`relative lg:col-span-6 ${
+                  className={`relative min-w-0 lg:col-span-6 ${
                     reversed ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
@@ -67,7 +67,7 @@ export function ProductChapters() {
 
                 {/* Architectural Specification & Conversion Column */}
                 <div
-                  className={`flex flex-col justify-center lg:col-span-6 ${
+                  className={`flex min-w-0 flex-col justify-center lg:col-span-6 ${
                     reversed ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
@@ -81,11 +81,7 @@ export function ProductChapters() {
                     </span>
                     <span className="inline-flex items-center gap-1.5 rounded-[var(--radius-lg)] border border-[var(--border-subtle)] px-3 py-1 text-[length:var(--text-md)] font-medium text-[var(--text-secondary)]">
                       <ShieldCheckIcon className="h-3.5 w-3.5 text-[var(--accent-text)]" />
-                      <span>
-                        {item.ulListed
-                          ? "UL 48 #E555259 Listed"
-                          : "ADA / Code Compliant"}
-                      </span>
+                      <span>UL 48 #E555259 Listed</span>
                     </span>
                   </div>
 
@@ -142,12 +138,14 @@ export function ProductChapters() {
 
                   {/* Actions */}
                   <div className="mt-7 flex flex-wrap items-center gap-4">
-                    <PillButton
-                      href={`/quote?type=${item.quoteTypeId}`}
+                    <ProductQuoteTrigger
+                      quoteTypeId={item.quoteTypeId}
+                      productName={item.shortName}
+                      placement={`home-chapter:${item.slug}`}
                       variant="cta"
                     >
-                      Quote This Sign
-                    </PillButton>
+                      Request a Quote
+                    </ProductQuoteTrigger>
 
                     <Link
                       href={`/products/${item.slug}`}
